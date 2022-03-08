@@ -1,0 +1,47 @@
+<!--
+HTML Todos los eventos
+Aqui se listan todos los eventos que se han guardado y/o modificado
+Hecho por Leonel Solís
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Eventos</title>
+        <link rel="stylesheet" href="css/TodosEventos.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Todos los eventos guardados</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Evento </th>
+                    <th>Artista</th>
+                    <th>Fecha del concierto </th>
+                    <th>Costo del evento </th>
+                    <th>Aforo Maximo </th>
+                    <th>Lugar </th>
+                    <th>Eliminar </th>
+                </tr>                
+            </thead>
+            
+            <tbody>
+                <th:block th:each="user : ${evento}">
+                    <tr>
+                        <td th:text="${user.getIdEvento}"></td>
+                        <td th:text="${user.getArtista}"></td>
+                        <td th:text="${user.getFechaconcierto}"></td>
+                        <td th:text="${user.getCostoevento}"></td>
+                        <td th:text="${user.getCapacidadMax}"></td>      
+                        <td th:text="${user.getLugarconcierto}"></td> 
+                        <td>
+                            <a th:href="@{/delete/{idEvento} (id=${evento.getId})}">Delete</a>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>            
+        </table>
+    </body>
+</html>

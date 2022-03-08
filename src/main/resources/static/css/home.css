@@ -1,0 +1,37 @@
+/*
+CSS para HTML Home
+*/
+/* 
+    Created on : 7 mar. 2022, 18:51:03
+    Author     : LeoSolis
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+body{
+    background:linear-gradient(120deg,#F7F9FB,#8FC1E3);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    padding-left: 3%;
+    padding-right: 3%;/* padding: espacio entre componenetes */
+    box-sizing: border-box; /* alto = alto + espacio + borde */
+    position: relative;
+    font-family:'Montserrat', sans-serif ;
+}
+
+h1{
+    text-align: center;
+    font-family:'Montserrat', sans-serif ;
+}
+
+a{
+    text-align: center;
+    font-family:'Montserrat', sans-serif ;    
+}

@@ -1,0 +1,54 @@
+<!--
+Form en HTML para agregar un nuevo evento
+Hecho por
+Leonel Solis
+Examen ITicket
+-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Agregar Evento Nuevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!--Main content -->
+            <div class="content">
+                <h2>Porfavor ingrese la información solicitada para agregar un evento nuevo</h2>
+                
+                <div class="formulario">   
+                <form th:object = "${evento}"
+                  th:action="@{/saveEvento}"
+                  method="POST"
+                  >
+                    <div class ="txt_field">
+                        <label>Nombre del Artista:</label>
+                        <input type="text" th:field="*{artista}" placeholder= "Nombre Artista" id="artista" aria-describedby="emailHelp">
+                    </div>                                      
+                    <div class ="txt_field">
+                        <label>Fecha concierto:</label>
+                        <input type ="date" th:field="*{fechaconcierto}" placeholder= "Fecha concierto" id="fechaconcierto" aria-describedby="emailHelp">
+                    </div>                    
+                    <div class ="txt_field">
+                        <label>Costo: $</label>
+                        <input type ="number" th:field="*{costoevento}" placeholder= "Costo Evento" id="costoevento" aria-describedby="emailHelp">       
+                    </div>   
+                    <div class ="txt_field">
+                        <label>Capacidad máxima:</label>
+                        <input type ="number" min="0" max="900"  th:field="*{capacidadMax}" placeholder= "Capacidad Maxima" id="capacidadMax" aria-describedby="emailHelp">       
+                    </div> 
+                    <div class ="txt_field">
+                        <label>Lugar del concierto:</label>
+                        <input type ="text" th:field="*{lugarconcierto}" placeholder= "Lugar del concierto" id="lugarconcierto" aria-describedby="emailHelp" >       
+                    </div> 
+                    <br>
+                    <br>
+                    <input type ="submit" value ="Enviar">
+                    <br>
+                    <br>
+                    <input type="reset" value="Limpiar Formulario">                               
+            </form>
+            </div>   
+            </div>
+    </body>
+</html>
